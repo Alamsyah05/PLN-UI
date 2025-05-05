@@ -64,8 +64,8 @@ if uploaded_files:
         elif "spklu" in filename.lower():
             # Process SPKLU file
             data1 = pd.read_excel(uploaded_file, sheet_name='Sheet1')
-            latitude1 = data1['latitude']
-            longitude1 = data1['longitude']
+            latitude1 = data1['Latitude']
+            longitude1 = data1['Longitude']
             coordinates_spklu = np.vstack([latitude1, longitude1]).T
             x1, y1 = transformer.transform(coordinates_spklu[:, 1], coordinates_spklu[:, 0])
             st.write(f"Processed {filename} (SPKLU)")
